@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script src="domEvent.js"></script>
+   <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 50%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    form {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    div {
+        background-color: #f2f2f2;
+        float: right;
+        width: 40%;
+       text-align: center;
+        border-radius: 20px;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>List of Persons</h2>
+    <table id="myTable" class="table">
+          <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Age</th>
+              <th>City</th>
+              <th id="action" value ="Upadate / Remove">Action</th>
+          </tr> 
+         
+    </table>
+    
+    <div id="right1">
+    <h2>Add/Update Person Form</h2>
+       <!-- <form onsubmit="return handleAdd()"> -->
+        <form>
+           Name: <input type="text" id="name"><br><br>
+           Gender: <input type="radio" class="Male"  name="gender" value="Male" onclick="set_value(this)">
+                   <label for="male">Male</label>
+                   <input type="radio" class="Female"  name="gender" value="Female" onclick="set_value(this)">
+                   <label for="female">Female</label><br><br>
+           Age: <input type="number" min="10" id="age"><br><br>
+           City: <select id="city" >
+            <option value="Lahore">Lahore</option>
+            <option value="Attock">Attock</option>
+            <option value="Islamabad">Islamabad</option>
+            <option value="Abbottabat">Abbottabat</option>
+          </select><br><br>
+           <button id= "resetBtn" type ="reset" value="Reset the form">Reset</button> <button id="addbtn" type="button"  onclick="addnewRow(event)">Add</button>
+            <button type="button" onclick="update_record(event)">Update</button>
+          </form>
+        </div>
+</body>
+</html>
